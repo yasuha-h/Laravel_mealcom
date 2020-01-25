@@ -7,6 +7,6 @@
     <link rel="stylesheet" type="text/css" href="./sass/style.css">
   </head>
   <body>
-    @yield('hello world')
+    
   </body>
 </html>
