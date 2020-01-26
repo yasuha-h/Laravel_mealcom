@@ -8,21 +8,21 @@
   </head>
   <body>
     <header>
-    <div class="container">
-      <div class="row">
-        <div class="title-logo col-xs-3">Mealcom</div>
-        <div class="col-xs-9">
-          <ul>
-            <li>
-              <a href="#">サインアップ</a>
-            </li>
-            <li>
-              <a href="#">サインイン</a>
-            </li>
-          </ul>
+      <div class="container">
+        <div class="row pt-50">
+          <div class="title-logo col-xs-6 text-center">Mealcom</div>
+          <div class="col-xs-6">
+            <ul class="list-unstyled row">
+              <li class="col-xs-6">
+                <a href="#">サインアップ</a>
+              </li>
+              <li class="col-xs-6">
+                 <a href="#">サインイン</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
     </header>
   </body>
 </html>
