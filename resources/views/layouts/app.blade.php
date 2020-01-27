@@ -11,8 +11,8 @@
     <header>
     <div class="container">
       <div class="row">
-        <div class="title-logo col-xs-4">Mealcom</div>
-        <div class="col-xs-8">
+        <div class="col-6">Mealcom</div>
+        <div class="col-6">
           <ul>
             <li>
               <a href="#">サインアップ</a>
