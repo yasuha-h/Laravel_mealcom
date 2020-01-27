@@ -10,8 +10,8 @@
     <header>
     <div class="container">
       <div class="row">
-        <div class="title-logo col-xs-3">Mealcom</div>
-        <div class="col-xs-9">
+        <div class="title-logo col-xs-4">Mealcom</div>
+        <div class="col-xs-8">
           <ul>
             <li>
               <a href="#">サインアップ</a>
