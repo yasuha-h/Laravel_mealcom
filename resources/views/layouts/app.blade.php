@@ -13,7 +13,7 @@
       <div class="row">
         <div class="col-6">Mealcom</div>
         <div class="col-6">
-          <ul class="list-unstyled row">
+          <ul>
             <li>
               <a href="#">サインアップ</a>
             </li>
