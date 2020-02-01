@@ -11,21 +11,24 @@ class PostsTableSeeder extends Seeder
      */
     public function run()
     {
+      DB::table('posts')->truncate();
       DB::table('posts')->insert(
         [
-        'user_id' => 1,
-        'img_1' => Str::random(10),
-        'content' => Str::random(10),
-        'created_at' => now(),
-        'updated_at' => now()
-        ],
-        [
+          [
           'user_id' => 1,
           'img_1' => Str::random(10),
           'content' => Str::random(10),
           'created_at' => now(),
           'updated_at' => now()
+          ],
+          [
+            'user_id' => 2,
+            'img_1' => Str::random(10),
+            'content' => Str::random(10),
+            'created_at' => now(),
+            'updated_at' => now()
+          ]
         ]
-    );
+      );
     }
 }

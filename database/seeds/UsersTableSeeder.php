@@ -11,6 +11,7 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
+      DB::table('users')->truncate();
       DB::table('users')->insert([
         'name' => Str::random(10),
         'email' => Str::random(10).'@gmail.com', 
