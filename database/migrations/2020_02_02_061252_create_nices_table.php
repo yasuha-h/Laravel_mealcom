@@ -15,6 +15,12 @@ class CreateNicesTable extends Migration
     {
         Schema::create('nices', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('user_id')->unsigned()
+                  ->foreign('user_id')->references('id')
+                  ->on('users');
+            $table->integer('post_id')->unsigned()
+                  ->foreign('post_id')->references('id')
+                  ->on('posts');
             $table->timestamps();
         });
     }
