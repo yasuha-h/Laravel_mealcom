@@ -26,16 +26,15 @@
     <div class="row">
       <div class="col-10 offset-1 col-md-6 offset-sm-3 pt-5 text-center">
         <input type="text" class="w-75 w-sm-50 rounded" id="username" name="username" 
-        placeholder="パスワード(再確認)" value="{{ old('username') }}">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-10 offset-1 col-md-6 offset-sm-3 pt-5 text-center">
-        <input type="text" class="w-75 w-sm-50 rounded" id="username" name="username" 
         placeholder="性別" value="{{ old('username') }}">
-      </div>
     </div>
-  </form>
+    </div>
+      <div class="row">
+        <div class="col-10 offset-1 col-md-6 offset-sm-3 pt-5 text-center">
+          <button type="submit" class="btn btn-primary">登録する</button>
+        </div>
+      </div>
+    </form>
   </div>
   @endsection
   
