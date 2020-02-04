@@ -3,41 +3,35 @@
 
 @include('common.errors')
 <div class="container">
-  <form action="" method="POST" >
-
+  <form action="{{'/signup'}}" method="POST" >
+    <input type="hidden" name="_token" value="{{ csrf_token() }}">
     <div class="row">
       <div class="col-10 offset-1 col-md-6 offset-sm-3 pt-5 text-center">
-        <input type="text" class="w-75 w-sm-50 rounded" id="username" name="username" 
-        placeholder="メールアドレスを入力してください" value="{{ old('username') }}">
+        <input type="email" class="w-75 w-sm-50 rounded" id="email" name="email" 
+        placeholder="メールアドレスを入力してください" value="{{ old('email') }}">
       </div>
     </div>
     <div class="row">
       <div class="col-10 offset-1 col-md-6 offset-sm-3 pt-5 text-center">
-        <input type="text" class="w-75 w-sm-50 rounded" id="username" name="username" 
-        placeholder="ユーザー名を入力してください" value="{{ old('username') }}">
+        <input type="text" class="w-75 w-sm-50 rounded" id="user_name" name="name" 
+        placeholder="ユーザー名を入力してください" value="{{ old('name') }}">
       </div>
     </div>
     <div class="row">
       <div class="col-10 offset-1 col-md-6 offset-sm-3 pt-5 text-center">
-        <input type="text" class="w-75 w-sm-50 rounded" id="username" name="username" 
-        placeholder="パスワード" value="{{ old('username') }}">
+        <input type="text" type="password" class="w-75 w-sm-50 rounded" id="password" name="password" 
+        placeholder="パスワード" value="{{ old('password') }}">
       </div>
     </div>
     <div class="row">
       <div class="col-10 offset-1 col-md-6 offset-sm-3 pt-5 text-center">
-        <input type="text" class="w-75 w-sm-50 rounded" id="username" name="username" 
-        placeholder="性別" value="{{ old('username') }}">
-    </div>
-    </div>
-      <div class="row">
-        <div class="col-10 offset-1 col-md-6 offset-sm-3 pt-5 text-center">
-          <button type="submit" class="btn btn-primary">登録する</button>
-        </div>
+        <button type="submit" class="btn btn-primary">登録する</button>
       </div>
-    </form>
-  </div>
-  @endsection
+    </div>
+  </form>
+</div>
+@endsection
   
-  @section('signup-css')
+@section('signup-css')
   <link rel="stylesheet" type="text/css" href="{{ asset('css/signup/signup.css') }}">
-  @endsection
+@endsection
