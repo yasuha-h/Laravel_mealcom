@@ -7,19 +7,19 @@
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
     <div class="row">
       <div class="col-10 offset-1 col-md-6 offset-sm-3 pt-5 text-center">
-        <input type="email" class="w-75 w-sm-50 rounded" id="email" name="email" 
+        <input type="email" class="form-control" id="email" name="email" 
         placeholder="メールアドレスを入力してください" value="{{ old('email') }}">
       </div>
     </div>
     <div class="row">
       <div class="col-10 offset-1 col-md-6 offset-sm-3 pt-5 text-center">
-        <input type="text" class="w-75 w-sm-50 rounded" id="user_name" name="name" 
+        <input type="text" class="form-control" id="user_name" name="name" 
         placeholder="ユーザー名を入力してください" value="{{ old('name') }}">
       </div>
     </div>
     <div class="row">
       <div class="col-10 offset-1 col-md-6 offset-sm-3 pt-5 text-center">
-        <input type="text" type="password" class="w-75 w-sm-50 rounded" id="password" name="password" 
+        <input type="text" type="password" class="form-control" id="password" name="password" 
         placeholder="パスワード" value="{{ old('password') }}">
       </div>
     </div>
