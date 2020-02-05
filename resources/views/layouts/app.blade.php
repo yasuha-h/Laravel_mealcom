@@ -16,10 +16,10 @@
         <div class="col-5 offset-4 d-flex">
           <ul class="list-unstyled row w-100">
             <li class="align-self-center w-50">
-              <a href="#" class="d-block text-center">サインアップ</a>
+              <a href="/signup" class="d-block text-center">サインアップ</a>
             </li>
             <li class="align-self-center w-50">
-              <a href="#" class="d-block text-center">サインイン</a>
+              <a href="/login" class="d-block text-center">サインイン</a>
             </li>
           </ul>
         </div>
