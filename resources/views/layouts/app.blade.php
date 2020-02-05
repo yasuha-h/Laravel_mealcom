@@ -6,7 +6,7 @@
     <title>Mealcom</title>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app_ex.css') }}">
-    @yield('signup-css')
+    @yield('css')
   </head>
   <body>
     <header>
@@ -26,6 +26,6 @@
       </div>
     </div>
     </header>
-    @yield('signup-form')
+    @yield('content')
   </body>
 </html>
