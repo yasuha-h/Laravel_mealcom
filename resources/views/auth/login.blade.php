@@ -7,14 +7,12 @@
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
     <div class="row">
       <div class="col-10 offset-1 col-md-6 offset-sm-3 pt-5 text-center">
-        <input type="email" class="form-control" id="email" name="email" 
-        placeholder="メールアドレスを入力してください" value="{{ old('email') }}">
+      <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="メールアドレス">
       </div>
     </div>
     <div class="row">
       <div class="col-10 offset-1 col-md-6 offset-sm-3 pt-5 text-center">
-        <input type="text" type="password" class="form-control" id="password" name="password" 
-        placeholder="パスワード" value="{{ old('password') }}">
+      <input id="password" type="password" class="form-control" name="password" placeholder="パスワード">
       </div>
     </div>
     <div class="row">
