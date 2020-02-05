@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('signup-form')
+@section('content')
 
 @include('common.errors')
 <div class="container">
@@ -32,6 +32,6 @@
 </div>
 @endsection
   
-@section('signup-css')
+@section('css')
   <link rel="stylesheet" type="text/css" href="{{ asset('css/signup/signup.css') }}">
 @endsection
