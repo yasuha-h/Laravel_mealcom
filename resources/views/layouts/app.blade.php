@@ -15,14 +15,29 @@
       <div class="row">
         <h2 class="col-3 text-center align-self-center">Mealcom</h2>
         <div class="col-5 offset-4 d-flex">
+          @auth
           <ul class="list-unstyled row w-100">
-            <li class="align-self-center w-50">
-              <a href="/signup" class="d-block text-center">サインアップ</a>
-            </li>
-            <li class="align-self-center w-50">
-              <a href="/login" class="d-block text-center">サインイン</a>
-            </li>
-          </ul>
+              <li class="align-self-center w-25">
+                <a href="/user/{id}" class="d-block text-center"></a>
+              </li>
+              <li class="align-self-center w-25">
+                <a href="/logout" class="d-block text-center">サインアウト</a>
+              </li>
+              <li class="align-self-center w-25">
+                <a href="/share" class="d-block text-center">シェア</a>
+              </li>
+            </ul>
+          @endauth
+          @guest
+            <ul class="list-unstyled row w-100">
+              <li class="align-self-center w-50">
+                <a href="/signup" class="d-block text-center">サインアップ</a>
+              </li>
+              <li class="align-self-center w-50">
+                <a href="/login" class="d-block text-center">サインイン</a>
+              </li>
+            </ul>
+          @endguest
         </div>
       </div>
     </div>

@@ -19,5 +19,6 @@ Route::get('/signup', function () {
 });
 Route::get('/login', 'Auth\LoginController@showLoginForm');
 
+Route::post('/logout', 'Auth\LoginController@logout');
 Route::post('/login', 'Auth\LoginController@login');
 Route::post('/signup', 'Auth\RegisterController@register');

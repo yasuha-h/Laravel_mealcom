@@ -3,7 +3,7 @@
 
 @include('common.errors')
 <div class="container">
-  <form action="{{'/signup'}}" method="POST" >
+  <form action="{{'/login'}}" method="POST" >
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
     <div class="row">
       <div class="col-10 offset-1 col-md-6 offset-sm-3 pt-5 text-center">
