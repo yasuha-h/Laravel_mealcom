@@ -21,12 +21,11 @@
                 <a href="/user/{id}" class="d-block text-center"></a>
               </li>
               <li class="align-self-center w-25">
-                <a class="d-block text-center" href="{{ route('/logout') }}" 
-                  onclick="event.preventDefault();
-                  document.getElementById('logout-form').submit();">
+                <button class="d-block text-center"
+                  onclick="document.getElementById('logout-form').submit();">
                   {{ __('Logout') }}
-                </a>
-                <form id="logout-form" action="{{ route('/logout') }}" method="POST" style="display: none;">
+                </button>
+                <form id="logout-form" action="{{'/logout'}}" method="POST" style="display: none;">
                   @csrf
                 </form>
               </li>
