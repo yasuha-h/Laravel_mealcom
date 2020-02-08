@@ -48,6 +48,7 @@
       </div>
     </div>
     </header>
+    @include('components.header')
     @yield('content')
   </body>
 </html>
