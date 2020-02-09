@@ -18,6 +18,7 @@ Route::get('/signup', function () {
   return view('register.signup');
 });
 Route::get('/login', 'Auth\LoginController@showLoginForm');
+Route::get('/user/{id}/following' ,'UserController@ShowFollowing');
 
 Route::post('/logout', 'Auth\LoginController@logout');
 Route::post('/login', 'Auth\LoginController@login');
