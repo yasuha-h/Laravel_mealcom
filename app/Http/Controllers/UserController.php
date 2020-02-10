@@ -3,8 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class UserController extends Controller
 {
-    //
+    // ユーザープロフィール
+    public function showProfile(){
+      return view('user.profile');
+    }
+
+    public function showFollowing(){
+      return view('user.following');
+    }
+
+
+
 }

@@ -5,10 +5,10 @@
       <div class="col-8 offset-2 d-flex">
         <ul class="list-unstyled row w-100">
           <li class="align-self-center w-25">
-            <a href="/signup" class="d-block text-center">シェア</a>
+            <a href="/user/{id}/profile" class="d-block text-center">シェア</a>
           </li>
           <li class="align-self-center w-25">
-            <a href="#" class="d-block text-center">フォロー</a>
+            <a href="/user/{id}/following" class="d-block text-center">フォロー</a>
           </li>
           <li class="align-self-center w-25">
             <a href="#" class="d-block text-center">フォロワー</a>
