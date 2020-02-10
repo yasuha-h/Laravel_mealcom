@@ -20,6 +20,7 @@ Route::get('/signup', function () {
 Route::get('/login', 'Auth\LoginController@showLoginForm');
 Route::get('/user/{id}' ,'UserController@showProfile');
 Route::get('/user/{id}/following' ,'UserController@showFollowing');
+Route::get('user/{id}/followers', 'UserController@showFollowers');
 
 Route::post('/logout', 'Auth\LoginController@logout');
 Route::post('/login', 'Auth\LoginController@login');

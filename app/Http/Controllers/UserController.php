@@ -11,9 +11,13 @@ class UserController extends Controller
     public function showProfile(){
       return view('user.profile');
     }
-
+    
     public function showFollowing(){
       return view('user.following');
+    }
+    // フォロワー表示
+    public function showFollowers(){
+      return view('user.followers');
     }
 
 
