@@ -8,11 +8,8 @@ use App\User;
 class UserController extends Controller
 {
     // ユーザープロフィール
-    public function showProfile(Request $request, $id){
-      $user = User::find($id);
-      return view('user', [
-        'user' => $user,
-      ]);
+    public function showProfile($id){
+      return view('user.profile', ['user' => User::findOrFail($id)]);
     }
     
     public function showFollowing(){
