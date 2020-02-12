@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    @include('common.head')
-  </head>
+  @include('common.head')
   <body>
     @include('components.header')
     @yield('content')
