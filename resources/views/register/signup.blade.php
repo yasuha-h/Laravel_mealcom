@@ -37,7 +37,3 @@
   </form>
 </div>
 @endsection
-  
-@section('css')
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/signup/signup.css') }}">
-@endsection
