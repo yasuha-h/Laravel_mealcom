@@ -1,6 +1,4 @@
 @extends('layouts.app')
-@include('components.header')
-
 @section('content')
   <div class="container">
     <div class="row">
