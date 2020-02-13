@@ -10,12 +10,12 @@ class HomeController extends Controller
     public function index(){
         if( Auth::check() )
         {
-          $user = Auth::user();
-          return view('index', ['user' => $user]);
+            $user = Auth::user();
+            return view('index', ['user' => $user]);
         }
         else
         {
-          return view('index');
+            return view('index');
         }
     }
 }
