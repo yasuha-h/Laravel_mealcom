@@ -1,6 +1,16 @@
 <nav class="nav nav-tabs col-1 text-center pr-0">
-    <a href="#" class="nav-item nav-link w-100 p-0 align-middle">シェア</a>
-    <a href="#" class="nav-item nav-link w-100 p-0 align-middle">フォロー</a>
-    <a href="#" class="nav-item nav-link w-100 p-0">フォロワー</a>
-    <a href="#" class="nav-item nav-link w-100 p-0">いいね</a>
+  <ul class="list-unstyled w-100">
+    <li class="align-middle">
+      <a href="#" class="nav-link w-100 py-5 px-0">シェア</a>
+    </li>
+    <li>
+      <a href="#" class="nav-link w-100 py-5 px-0">フォロー</a>
+    </li>
+    <li>
+      <a href="#" class="nav-link w-100 py-5 px-0">フォロワー</a>
+    </li>
+    <li>
+      <a href="#" class="nav-link w-100 py-5 px-0">いいね</a>
+    </li>
+  </ul>
 </nav>
