@@ -1,6 +1,6 @@
 <nav class="nav nav-tabs col-1 text-center pr-0">
   <ul class="list-unstyled w-100">
-    <li class="align-middle">
+    <li>
       <a href="#" class="nav-link w-100 py-5 px-0">シェア</a>
     </li>
     <li>
