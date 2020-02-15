@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
+    // シェア投稿ページ表示
     public function createPost() {
         if( Auth::check() )
         {
@@ -18,4 +19,12 @@ class PostController extends Controller
             return redirect('/login');
         }
     }
+
+    // シェアポスト
+    public function post() {
+      
+    }
+
+
+
 }

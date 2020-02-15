@@ -24,3 +24,4 @@ Route::get('/share', 'PostController@createPost');
 Route::post('/logout', 'Auth\LoginController@logout');
 Route::post('/login', 'Auth\LoginController@login');
 Route::post('/signup', 'Auth\RegisterController@register');
+Route::post('/share', 'PostController@post');
