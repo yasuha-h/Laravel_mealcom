@@ -10,7 +10,7 @@
         <div class="col-12 text-center mb-1">{{ $user->profile }}</div>
         @auth
         <div class="offset-3 col-6">
-          <a href="#" class="d-block rounded w-100 bg-info text-white py-2 px-3">シェアする</a>
+          <a href="/share" class="d-block rounded w-100 bg-info text-white py-2 px-3">シェアする</a>
         </div>
         @endauth
       </div>
