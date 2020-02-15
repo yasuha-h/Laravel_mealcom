@@ -12,6 +12,7 @@
       @include('common.navbar')
       <!-- ユーザーシェア -->
       <div class="col-7 border-left px-0">
+        @include('components.share')
       </div>
     </div>
   </div>

@@ -11,3 +11,6 @@ a:hover {
 input::placeholder {
   font-size: 13px;
 }
+.fa-feart {
+  color: #ff1493;
+}
