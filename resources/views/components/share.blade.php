@@ -9,6 +9,5 @@
   </div>
   <div class="col-1">
     <i class="fas fa-heart"></i>
-    hello Blade
   </div>
 </div>
