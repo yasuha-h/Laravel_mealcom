@@ -17,13 +17,16 @@ class PostsTableSeeder extends Seeder
           [
           'user_id' => 1,
           'img_1' => Str::random(10),
+          'img_2' => Str::random(10),
           'content' => Str::random(10),
           'created_at' => now(),
           'updated_at' => now()
           ],
           [
-            'user_id' => 2,
+            'user_id' => 1,
             'img_1' => Str::random(10),
+            'img_2' => Str::random(10),
+            'img_3' => Str::random(10),
             'content' => Str::random(10),
             'created_at' => now(),
             'updated_at' => now()
