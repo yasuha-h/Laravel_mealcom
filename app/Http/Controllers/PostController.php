@@ -10,6 +10,11 @@ use App\Post;
 
 class PostController extends Controller
 {
+    public function __construct()
+    {
+      $this->middleware('auth')
+           ->except(['createPost']);
+    }
     // シェア投稿ページ表示
     public function createPost() {
         if( Auth::check() )
@@ -26,11 +31,24 @@ class PostController extends Controller
     /**
      * シェアの投稿
      * 
-     * @param PostRequest $request
+     * @param Request $request
      * @return Response
      */
     public function post(Request $request) 
     {
+        // Postバリデーション
+        $request->validate([
+          'post_img' => [
+              'required', 
+              'file',
+              'image',
+              'mimes:jpeg,png,jpg',
+              'max:2048',
+          ],
+          'content' => ['max:140'],
+        ]);
+
+        // Postレコード作成
         $post = new Post;
         $post->user_id = Auth::id();
         $post->content = $request->post_content;
@@ -38,7 +56,10 @@ class PostController extends Controller
         $post->created_at = now();
         $post->updated_at = now();
         $post->save();
-        return view('user.profile', ['user' => Auth::user()]);
+        return view('user.profile', [
+            'user' => Auth::user(),
+            'post' => Post::all()->where()
+        ]);
     }
 
 
