@@ -4,7 +4,7 @@
       <a href="#" class="nav-link w-100 py-5 px-0">シェア</a>
     </li>
     <li>
-      <a href="#" class="nav-link w-100 py-5 px-0">フォロー</a>
+      <a href="/user/{{ $user->id }}/following" class="nav-link w-100 py-5 px-0">フォロー</a>
     </li>
     <li>
       <a href="#" class="nav-link w-100 py-5 px-0">フォロワー</a>

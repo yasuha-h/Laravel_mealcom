@@ -1,7 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="container py-3 border-bottom">
-    {{ Auth::name() }}  
-  </div>
+  {{ $following_users }}
+  @foreach($followings as $following)
+    <div class="container py-3 border-bottom">
+      {{ $following->target_id }}
+    </div>
+  @endforeach
 @endsection
