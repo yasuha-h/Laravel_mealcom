@@ -38,16 +38,15 @@ class PostController extends Controller
     {
         // Postバリデーション
         $request->validate([
-          'post_img' => [
-              'required', 
-              'file',
-              'image',
-              'mimes:jpeg,png,jpg',
-              'max:2048',
-          ],
-          'content' => ['max:140'],
+            'post_img' => [
+                'required', 
+                'file',
+                'image',
+                'mimes:jpeg,png,jpg',
+                'max:2048',
+            ],
+            'content' => ['max:140'],
         ]);
-
         // Postレコード作成
         $post = new Post;
         $post->user_id = Auth::id();
@@ -56,12 +55,16 @@ class PostController extends Controller
         $post->created_at = now();
         $post->updated_at = now();
         $post->save();
-        return view('user.profile', [
-            'user' => Auth::user(),
-            'post' => Post::all()->where()
+        
+        return redirect()->action(
+            'UserController@showProfile', [
+                'id' => Auth::id(),
         ]);
+        // return view('user.profile', [
+        //     'user' => Auth::user(),
+        //     'post' => Post::where('user_id', Auth::id())->get(),
+        // ]);
     }
-
 
 
 }

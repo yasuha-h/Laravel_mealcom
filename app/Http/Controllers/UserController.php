@@ -3,14 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Post;
 use App\User;
 
 class UserController extends Controller
 {
     // ユーザープロフィール
-    public function showProfile($id)
+    public function showProfile(int $id)
     {
-        return view('user.profile', ['user' => User::findOrFail($id)]);
+        return view('user.profile', [
+          'user' => User::findOrFail($id),
+          'posts' => Post::where('user_id', $id)->get(),
+        ]);
     }
     
     public function showFollowing()
