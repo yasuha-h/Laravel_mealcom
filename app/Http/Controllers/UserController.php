@@ -25,7 +25,7 @@ class UserController extends Controller
         $followings = Following::where('user_id', $id)
                               ->select('target_id')
                               ->get();
-        
+
         foreach($followings as $following){
             $target_id = $following->target_id;
             $following_users = User::where('id', $target_id)

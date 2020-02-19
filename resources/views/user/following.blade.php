@@ -1,10 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-  {{ $following_users }}
-  @foreach($followings as $following)
+  @foreach($following_users as $following_user)
     <div class="container py-3 border-bottom">
-      {{ $following->target_id }}
+      {{ $following_user }}
     </div>
   @endforeach
 @endsection
