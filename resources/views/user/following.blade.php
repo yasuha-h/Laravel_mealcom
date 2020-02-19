@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  @foreach($following_users as $following_user)
+  @foreach($followings as $following)
     <div class="container py-3 border-bottom">
       {{ $following_user }}
     </div>

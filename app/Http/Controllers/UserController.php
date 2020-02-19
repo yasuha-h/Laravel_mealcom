@@ -21,19 +21,15 @@ class UserController extends Controller
     
     public function showFollowing(int $id)
     {
-        // フォローしているユーザーのIDを取得
-        $followings = Following::where('user_id', $id)
-                              ->select('target_id')
-                              ->get();
+        // フォローしているユーザーを取得
+        $following_users = User::whereIn('id',
+                              Following::where('user_id', $id)
+                                ->select('target_id')
+                                ->get()        
+                          )->get();
 
-        foreach($followings as $following){
-            $target_id = $following->target_id;
-            $following_users = User::where('id', $target_id)
-                                  ->get();
-        }
         return view('user.following', [
             'user' => User::findOrFail($id),
-            'followings' => $followings,
             'following_users' => $following_users,
         ]);
     }
