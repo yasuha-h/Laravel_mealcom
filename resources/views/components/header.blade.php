@@ -6,7 +6,7 @@
         @auth
           <ul class="list-unstyled row w-100">
             <li class="align-self-center col-3 offset-3">
-              <a href="user/{{ $user->id }}" class="p-1 d-block text-center">プロフィール</a>
+              <a href="/user/{{ $user->id }}" class="p-1 d-block text-center">プロフィール</a>
             </li>
             <li class="align-self-center col-3">
               <a href="#" class="d-block text-center p-1"

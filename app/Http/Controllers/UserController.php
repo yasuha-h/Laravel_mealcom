@@ -29,6 +29,7 @@ class UserController extends Controller
                           )->get();
 
         return view('user.following', [
+            'user' => User::findOrFail($id),
             'following_users' => $following_users,
         ]);
     }
