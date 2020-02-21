@@ -33,12 +33,20 @@ class UserController extends Controller
             'following_users' => $following_users,
         ]);
     }
-    // フォロワー表示
-    public function showFollowers()
+    
+    public function showFollowers(int $id)
     {
-        return view('user.followers');
+        // フォローされているユーザーの取得
+        $followed_users = User::whereIn('id',
+                            Follower::where('user_id', $id)
+                              ->select('target_id')
+                              ->get()
+                          )->get();
+        return view('user.followers', [
+            'user' => User::findOrFail($id),
+            'followed_users' => $followed_users,
+        ]);
     }
-
 
 
 }
