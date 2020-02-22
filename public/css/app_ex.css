@@ -11,7 +11,7 @@ a:hover {
 input::placeholder {
   font-size: 13px;
 }
-.fa-feart {
+.fa-heart {
   color: #ff1493;
 }
 .fs-user-name {
@@ -19,4 +19,12 @@ input::placeholder {
 }
 .fs-m-id-name {
   font-size: 0.8rem;
+}
+.container-40 {
+  display: flex;
+  max-width: 40%;
+  margin: 0 auto;
+}
+.border-grey {
+  border: 1px solid #DDD;
 }
