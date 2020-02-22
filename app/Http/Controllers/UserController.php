@@ -52,14 +52,14 @@ class UserController extends Controller
     // ユーザーがいいねしたポストの表示
     public function showNices(int $id)
     {
-        $nices = Post::whereIn('id',
+        $post_nices = Post::whereIn('id',
                     Nice::where('user_id', $id)
                       ->select('post_id')
                       ->get()   
                  )->get();
         return view('user.nices', [
           'user' => User::findOrFail($id),
-          'nices' => $nices,
+          'posts' => $post_nices,
         ]);
     }
 

@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
-  @foreach($nices as $nice)
+  @include('components.share')
+  {{-- @foreach($nices as $nice)
     <div class="container py-3 border-bottom">
       <div class="row">
         <div class="col-3 d-flex align-items-center justify-content-center">
@@ -17,5 +18,5 @@
         </div>
       </div>
     </div>
-  @endforeach
+  @endforeach --}}
 @endsection
