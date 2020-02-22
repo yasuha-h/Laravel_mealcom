@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Nice;
 use App\Post;
 use App\User;
 use App\Following;
@@ -10,7 +11,7 @@ use App\Follower;
 
 class UserController extends Controller
 {
-    // ユーザープロフィール
+    // ユーザープロフィール表示
     public function showProfile(int $id)
     {
         return view('user.profile', [
@@ -19,9 +20,9 @@ class UserController extends Controller
         ]);
     }
     
+    // フォローしているユーザーを表示
     public function showFollowing(int $id)
     {
-        // フォローしているユーザーを取得
         $following_users = User::whereIn('id',
                               Following::where('user_id', $id)
                                 ->select('target_id')
@@ -34,9 +35,9 @@ class UserController extends Controller
         ]);
     }
     
+    // フォローされているユーザーを表示
     public function showFollowers(int $id)
     {
-        // フォローされているユーザーの取得
         $followed_users = User::whereIn('id',
                             Follower::where('user_id', $id)
                               ->select('target_id')
@@ -48,5 +49,18 @@ class UserController extends Controller
         ]);
     }
 
+    // ユーザーがいいねしたポストの表示
+    public function showNices(int $id)
+    {
+        $nices = Post::whereIn('id',
+                    Nice::where('user_id', $id)
+                      ->select('post_id')
+                      ->get()   
+                 )->get();
+        return view('user.nices', [
+          'user' => User::findOrFail($id),
+          'nices' => $nices,
+        ]);
+    }
 
 }

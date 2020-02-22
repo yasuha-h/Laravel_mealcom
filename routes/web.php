@@ -18,7 +18,8 @@ Route::get('/signup', function () {
 Route::get('/login', 'Auth\LoginController@showLoginForm');
 Route::get('/user/{id}' ,'UserController@showProfile');
 Route::get('/user/{id}/following' ,'UserController@showFollowing');
-Route::get('user/{id}/followers', 'UserController@showFollowers');
+Route::get('/user/{id}/followers', 'UserController@showFollowers');
+Route::get('/user/{id}/nices', 'UserController@showNices');
 Route::get('/share', 'PostController@createPost');
 
 Route::post('/logout', 'Auth\LoginController@logout');

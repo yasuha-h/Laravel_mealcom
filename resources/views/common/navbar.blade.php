@@ -10,7 +10,7 @@
       <a href="/user/{{ $user->id }}/followers" class="nav-link w-100 py-5 px-0">フォロワー</a>
     </li>
     <li>
-      <a href="#" class="nav-link w-100 py-5 px-0">いいね</a>
+      <a href="/user/{{ $user->id }}/nices" class="nav-link w-100 py-5 px-0">いいね</a>
     </li>
   </ul>
 </nav>
