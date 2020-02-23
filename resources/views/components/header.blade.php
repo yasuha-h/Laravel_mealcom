@@ -1,7 +1,7 @@
 <header>
   <div class="container py-1 border-bottom">
     <div class="row">
-      <h2 class="col-3 text-center align-self-center">Mealcom</h2>
+      <a href="/" class="col-3 text-center align-self-center h2 m-0">Mealcom</a>
       <div class="col-6 offset-3 d-flex">
         @auth
           <ul class="list-unstyled row w-100">
