@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.user')
 @section('content')
   @foreach($followed_users as $followed_user)
     <div class="container py-3 border-bottom">
