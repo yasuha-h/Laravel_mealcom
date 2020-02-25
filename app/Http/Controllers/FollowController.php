@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Following;
 use App\User;
 
@@ -13,13 +14,26 @@ class FollowController extends Controller
         $this->middleware('auth');
     }
 
-    public function follow(Request $request, int $id)
+    public function follow(User $user)
     {
-        $following = new Following;
-        $following->user_id = Auth::id();
-        $following->target_id = $id;
-        $following->created_at = now();
-        $following->updated_at = now();
-        $following->save();
+      $follower = auth()->user();
+      // フォローしているか
+      $is_following = $follower->isFollowing($user->id);
+      if(!$is_following) {
+          // フォローしていなければフォローする
+          $follower->follow($user->id);
+          return back();
+      }
+    }
+    public function unfollow(User $user)
+    {
+      $follower = auth()->user();
+      // フォローしているか
+      $is_following = $follower->isFollowing($user->id);
+      if($is_following) {
+          // フォローしていればフォローを解除する
+          $follower->unfollow($user->id);
+          return back();
+      }
     }
 }

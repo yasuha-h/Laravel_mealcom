@@ -13,8 +13,15 @@
         </div>
         <div class="offset-3 col-3 d-flex align-items-center 
                     justify-content-center rounded-pill">
-          <input @click="follow" type="submit" id="isFollow" value="フォロー" 
-            class="p-2 w-75 cursor-p bg-info rounded-pill text-white text-center">          
+          <!-- <form action="/user/{{ $user->id }}/follow" method="POST">
+            @csrf
+            <button type="submit" class="btn btn-primary">フォローする</button>
+          </form> -->
+          <form action="{{ route('/user/{{ $user->id }}/unfollow', ['target_id' => $following_user->target_id]) }}" method="POST">
+            @csrf
+            {{ method_field('DELETE') }}
+            <button type="submit" class="btn btn-danger">フォロー解除</button>
+          </form>
         </div>
       </div>
     </div>

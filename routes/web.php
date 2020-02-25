@@ -26,3 +26,6 @@ Route::post('/logout', 'Auth\LoginController@logout');
 Route::post('/login', 'Auth\LoginController@login');
 Route::post('/signup', 'Auth\RegisterController@register');
 Route::post('/share', 'PostController@post');
+
+Route::post('user/{id}/follow', 'FollowController@follow')->name('follow');
+Route::delete('user/{id}/unfollow', 'FollowController@unfollow')->name('unfollow');
