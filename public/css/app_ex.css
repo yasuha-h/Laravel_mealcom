@@ -20,11 +20,14 @@ input::placeholder {
 .fs-m-id-name {
   font-size: 0.8rem;
 }
-.container-40 {
+.container-60 {
   display: flex;
-  max-width: 40%;
+  max-width: 60%;
   margin: 0 auto;
 }
 .border-grey {
   border: 1px solid #DDD;
+}
+.cursor-p {
+  cursor: pointer;
 }

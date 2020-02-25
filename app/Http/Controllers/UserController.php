@@ -14,7 +14,7 @@ class UserController extends Controller
     // ユーザープロフィール表示
     public function showProfile(int $id)
     {
-        return view('user.profile', [
+        return view('user.share', [
             'user' => User::findOrFail($id),
             'posts' => Post::where('user_id', $id)->get(),
         ]);
