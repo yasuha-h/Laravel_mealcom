@@ -11,6 +11,12 @@ use App\Follower;
 
 class UserController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     // ユーザープロフィール表示
     public function showProfile(int $id)
     {
@@ -61,6 +67,29 @@ class UserController extends Controller
           'user' => User::findOrFail($id),
           'posts' => $post_nices,
         ]);
+    }
+
+    public function follow(User $user)
+    {
+      $follower = auth()->user();
+      // フォローしているか
+      $is_following = $follower->isFollowing($user->id);
+      if(!$is_following) {
+          // フォローしていなければフォローする
+          $follower->follow($user->id);
+          return back();
+      }
+    }
+    public function unfollow(User $user)
+    {
+      $follower = auth()->user();
+      // フォローしているか
+      $is_following = $follower->isFollowing($user->id);
+      if($is_following) {
+          // フォローしていればフォローを解除する
+          $follower->unfollow($user->id);
+          return back();
+      }
     }
 
 }
