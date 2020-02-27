@@ -30,8 +30,8 @@ class UserController extends Controller
     public function showFollowing(int $id)
     {
         $following_users = User::whereIn('id',
-                              Following::where('user_id', $id)
-                                ->select('target_id')
+                              Follower::where('following_id', $id)
+                                ->select('followed_id')
                                 ->get()        
                           )->get();
 
@@ -45,8 +45,8 @@ class UserController extends Controller
     public function showFollowers(int $id)
     {
         $followed_users = User::whereIn('id',
-                            Follower::where('user_id', $id)
-                              ->select('target_id')
+                            Follower::where('followed_id', $id)
+                              ->select('following_id')
                               ->get()
                           )->get();
         return view('user.followers', [
