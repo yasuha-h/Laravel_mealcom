@@ -16,10 +16,16 @@ Route::get('/signup', function () {
   return view('register.signup');
 });
 Route::get('/login', 'Auth\LoginController@showLoginForm');
-Route::get('/user/{id}' ,'UserController@showProfile');
-Route::get('/user/{id}/following' ,'UserController@showFollowing');
+
+
+Route::get('/user/{id}', 'UserController@showProfile');
+Route::get('/user/{id}/following', 'UserController@showFollowing');
 Route::get('/user/{id}/followers', 'UserController@showFollowers');
 Route::get('/user/{id}/nices', 'UserController@showNices');
+Route::post('user/{id}/follow', 'FollowController@follow')->name('follow');
+Route::delete('user/{id}/unfollow', 'FollowController@unfollow')->name('unfollow');
+
+
 Route::get('/share', 'PostController@createPost');
 
 Route::post('/logout', 'Auth\LoginController@logout');
@@ -27,5 +33,4 @@ Route::post('/login', 'Auth\LoginController@login');
 Route::post('/signup', 'Auth\RegisterController@register');
 Route::post('/share', 'PostController@post');
 
-Route::post('user/{id}/follow', 'FollowController@follow')->name('follow');
-Route::delete('user/{id}/unfollow', 'FollowController@unfollow')->name('unfollow');
+
