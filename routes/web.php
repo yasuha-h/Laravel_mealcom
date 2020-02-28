@@ -21,8 +21,8 @@ Route::get('/user/{id}', 'UserController@showProfile');
 Route::get('/user/{id}/following', 'UserController@showFollowing');
 Route::get('/user/{id}/followers', 'UserController@showFollowers');
 Route::get('/user/{id}/nices', 'UserController@showNices');
-Route::post('user/{id}/follow', 'FollowController@follow')->name('follow');
-Route::delete('user/{id}/unfollow', 'FollowController@unfollow')->name('unfollow');
+Route::post('user/{id}/follow', 'UserController@follow')->name('follow');
+Route::delete('user/{id}/unfollow', 'UserController@unfollow')->name('unfollow');
 
 Route::get('/share', 'PostController@createPost');
 
