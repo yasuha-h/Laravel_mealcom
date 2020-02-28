@@ -15,29 +15,29 @@ class FollowersTableSeeder extends Seeder
         DB::table('followers')->insert(
           [
             [
-              'user_id' => 1,
-              'target_id' => 2,
-              'created_at' => now(),
-              'updated_at' => now(), 
+              'following_id' => 1,
+              'followed_id' => 2,
             ],
             [
-              'user_id' => 1,
-              'target_id' => 3,
-              'created_at' => now(),
-              'updated_at' => now(),   
+              'following_id' => 2,
+              'followed_id' => 3,
             ],
             [
-              'user_id' => 2,
-              'target_id' => 2,
-              'created_at' => now(),
-              'updated_at' => now(),
+              'following_id' => 2,
+              'followed_id' => 1,
             ],
             [
-              'user_id' => 4,
-              'target_id' => 1,
-              'created_at' => now(),
-              'updated_at' => now(),
-            ]
+              'following_id' => 3,
+              'followed_id' => 4,
+            ],
+            [
+              'following_id' => 2,
+              'followed_id' => 4,
+            ],
+            [
+              'following_id' => 4,
+              'followed_id' => 1,
+            ],
           ]
         );
     }
