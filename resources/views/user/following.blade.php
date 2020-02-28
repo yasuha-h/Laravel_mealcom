@@ -17,7 +17,7 @@
             @csrf
             <button type="submit" class="btn btn-primary">フォローする</button>
           </form> -->
-          <form action="{{ route('/user/{{ $user->id }}/unfollow', ['target_id' => $following_user->target_id]) }}" method="POST">
+          <form action="/user/{{ $user->id }}/unfollow" method="POST">
             @csrf
             {{ method_field('DELETE') }}
             <button type="submit" class="btn btn-danger">フォロー解除</button>
