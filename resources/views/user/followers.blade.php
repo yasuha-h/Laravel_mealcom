@@ -10,11 +10,24 @@
           <p class="col-12 m-0 fs-user-name">{{ $followed_user->name }}</p>
           <p class="col-12 m-0 fs-m-id-name">{{ $followed_user->mealcom_id }}</p>
         </div>
-        <div class="offset-3 col-2 d-flex align-items-center 
-                    justify-content-center 
-                    bg-info rounded-pill text-white">
-          フォローする
-        </div>
+        @if (!auth()->user()->isFollowing($followed_user->id))
+          <div class="offset-3 col-3 d-flex align-items-center 
+                      justify-content-center rounded-pill">
+            <form action="{{ route('follow', ['id' => $followed_user->id]) }}" method="POST">
+              @csrf
+              <button type="submit" class="btn border">フォロー</button>
+            </form>
+          </div>
+        @else
+          <div class="offset-3 col-3 d-flex align-items-center 
+                     justify-content-center rounded-pill">
+            <form action="{{ route('unfollow', ['id' => $followed_user->id]) }}" method="POST">
+              @csrf
+              {{ method_field('DELETE') }}
+              <button type="submit" class="btn btn-info">フォロー中</button>
+            </form>
+          </div>
+        @endif
       </div>
     </div>
   @endforeach
