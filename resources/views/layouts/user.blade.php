@@ -8,15 +8,34 @@
         <!-- ユーザープロフィール  -->
         <div class="col-4 row px-0 m-0 h-100 pt-5 text-center">
           <h3 class="col-12 text-center m-0">{{ $user->name }}</h3>
-          <div class="col-12 text-center">ID:{{ $user->mealcom_id }}</div>
-          <div class="col-12 text-center">性別:{{ $user->sex_code }}</div>
-          <div class="col-12 text-center mb-1">{{ $user->profile }}</div>
-          @auth
-            <div class="offset-3 col-6">
+          <div class="col-12 text-center pt-3">ID:{{ $user->mealcom_id }}</div>
+          <div class="col-12 text-center pt-3">性別:{{ $user->sex_code }}</div>
+          <div class="col-12 text-center mb-1 pt-3">{{ $user->profile }}</div>
+          @if(auth()->id() === $user->id)
+            <div class="offset-3 col-6 pt-3">
               <a href="/share" class="d-block rounded w-100 bg-info text-white py-2 px-3">シェアする</a>
             </div>
-          @endauth
-        </div>
+          @else
+            @if (!auth()->user()->isFollowing($user->id))
+              <div class="offset-3 col-6 d-flex align-items-center 
+                          justify-content-center rounded-pill pt-3">
+                <form action="{{ route('follow', ['id' => $user->id]) }}" method="POST">
+                  @csrf
+                  <button type="submit" class="btn border">フォロー</button>
+                </form>
+              </div>
+            @else
+              <div class="offset-3 col-6 d-flex align-items-center 
+                          justify-content-center rounded-pill pt-3">
+                <form action="{{ route('unfollow', ['id' => $user->id]) }}" method="POST">
+                  @csrf
+                  {{ method_field('DELETE') }}
+                  <button type="submit" class="btn btn-info">フォロー中</button>
+                </form>
+              </div>
+            @endif
+          @endif
+          </div>
         @include('common.navbar')
           <!-- ユーザーシェア -->
           <div class="col-7 border-left px-0">
