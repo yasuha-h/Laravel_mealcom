@@ -48,13 +48,14 @@ class PostController extends Controller
             ],
             'content' => ['max:140'],
         ]);
-        // レコード数のカウント
-        $post_count = Post::count();
+        // レコード数のカウント+1
+        $post_count = (string) Post::count() + 1;
         // Postレコード作成
         $post = new Post;
         $post->user_id = Auth::id();
         $post->content = $request->post_content;
-        $post->img_1 = $request->post_img->storeAs($post_count + 1)->store('public');
+        $file_ex = $request->file('post_img')->getClientOriginalExtension();
+        $post->img_1 = $request->file('post_img')->storeAs('public', $post_count.'.'.$file_ex);
         $post->created_at = now();
         $post->updated_at = now();
         $post->save();
