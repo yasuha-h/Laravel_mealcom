@@ -16,7 +16,8 @@ class PostController extends Controller
            ->except(['createPost']);
     }
     // シェア投稿ページ表示
-    public function createPost() {
+    public function createPost() 
+    {
         if( Auth::check() )
         {
             $user = Auth::user();
@@ -47,11 +48,13 @@ class PostController extends Controller
             ],
             'content' => ['max:140'],
         ]);
+        // レコード数のカウント
+        $post_count = Post::count();
         // Postレコード作成
         $post = new Post;
         $post->user_id = Auth::id();
         $post->content = $request->post_content;
-        $post->img_1 = $request->post_img;
+        $post->img_1 = $request->post_img->storeAs($post_count + 1)->store('public');
         $post->created_at = now();
         $post->updated_at = now();
         $post->save();
@@ -60,11 +63,5 @@ class PostController extends Controller
             'UserController@showProfile', [
                 'id' => Auth::id(),
         ]);
-        // return view('user.profile', [
-        //     'user' => Auth::user(),
-        //     'post' => Post::where('user_id', Auth::id())->get(),
-        // ]);
     }
-
-
 }

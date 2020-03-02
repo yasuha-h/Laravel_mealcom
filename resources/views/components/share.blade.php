@@ -6,7 +6,7 @@
     </div>
     <div class="offset-1 col-10 text-center">
       <!-- img -->
-      {{ $post->img_1 }}
+      <img src="{{ asset('/storage/'.$post->img_1) }}">
     </div>
     <div class="offset-1 col-10 text-center"></div>
     <div class="col-1 p-0">
