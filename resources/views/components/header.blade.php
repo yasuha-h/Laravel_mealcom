@@ -1,4 +1,4 @@
-<header>
+<header class="bg-white">
   <div class="container py-1 border-bottom">
     <div class="row">
       <a href="/" class="col-3 text-center align-self-center h2 m-0">Mealcom</a>
