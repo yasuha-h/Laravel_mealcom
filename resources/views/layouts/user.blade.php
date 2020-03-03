@@ -38,7 +38,7 @@
           </div>
         @include('common.navbar')
           <!-- ユーザーシェア -->
-          <div class="col-7 border-left px-0">
+          <div class="col-7 px-0">
             @yield('content')
           </div>
       </div>
