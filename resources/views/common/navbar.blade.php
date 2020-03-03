@@ -1,4 +1,4 @@
-<nav class="nav col-1 text-center pr-0 border-right h-100">
+<nav class="nav col-1 text-center pr-0 border-right h-100 sticky">
   <ul class="list-unstyled w-100">
     <li>
       <a href="/user/{{ $user->id }}" class="nav-link w-100 py-5 px-0">シェア</a>

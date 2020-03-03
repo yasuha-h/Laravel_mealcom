@@ -18,7 +18,7 @@ header {
 }
 .sticky {
   position: sticky;
-  top: 48px;
+  top: 5rem;
 }
 .fa-heart {
   color: #ff1493;
