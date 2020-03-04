@@ -1,12 +1,12 @@
 @foreach ($posts as $post)
   <div class="container-60 border-grey row pt-3 pb-0 px-0 rounded-lg">
     <div class="offset-1 col-10 text-center">
-      <!-- text-content -->
-      {{ $post->content }}
-    </div>
-    <div class="offset-1 col-10 text-center">
       <!-- img -->
       <img src="{{ asset('/storage/'.$post->img_1) }}">
+    </div>
+    <div class="offset-1 col-10">
+      <!-- text-content -->
+      {{ $post->content }}
     </div>
     <div class="offset-1 col-10 text-center"></div>
     <div class="col-1 p-0">
