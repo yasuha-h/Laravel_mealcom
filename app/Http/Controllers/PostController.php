@@ -65,4 +65,15 @@ class PostController extends Controller
                 'id' => Auth::id(),
         ]);
     }
+
+    // レコード削除
+    public function delete(int $id)
+    {
+        $post = Post::destroy($id);
+
+        return redirect()->action(
+          'UserController@showProfile', [
+              'id' => Auth::id(),
+      ]);
+    }
 }
