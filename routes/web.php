@@ -27,7 +27,7 @@ Route::delete('user/{id}/unfollow', 'UserController@unfollow')->name('unfollow')
 Route::get('/share', 'PostController@createPost');
 
 Route::post('/logout', 'Auth\LoginController@logout');
-Route::post('/login', 'Auth\LoginController@login');
+Route::post('/login', 'Auth\LoginController@login')->name('login');
 Route::post('/signup', 'Auth\RegisterController@register');
 Route::post('/share', 'PostController@post');
 Route::delete('/share/{id}/delete', 'PostController@delete')->name('post-delete');
