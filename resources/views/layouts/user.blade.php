@@ -12,8 +12,10 @@
           <div class="col-12 text-center pt-3">性別:{{ $user->sex_code }}</div>
           <div class="col-12 text-center mb-1 pt-3">{{ $user->profile }}</div>
           @if(auth()->id() === $user->id)
-            <div class="offset-3 col-6 pt-3">
-              <a href="/share" class="d-block rounded w-100 bg-info text-white py-2 px-3">シェアする</a>
+            <div class="offset-3 col-6 pt-3 text-center">
+              <a href="/user/{{ auth()->id() }}/edit" class="d-block rounded w-100 bg-info text-white py-2 px-3">
+                プロフィール編集
+              </a>
             </div>
           @else
             @if (!auth()->user()->isFollowing($user->id))
