@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Nice;
 use App\Post;
 use App\User;
-use App\Following;
 use App\Follower;
 
 class UserController extends Controller
@@ -24,6 +24,27 @@ class UserController extends Controller
             'user' => User::findOrFail($id),
             'posts' => Post::where('user_id', $id)->get(),
         ]);
+    }
+    public function showEdit()
+    {   
+        return view('user.edit', [
+            'auth' => Auth::user()
+        ]);
+    }
+    public function editProfile(Request $request)
+    {
+        $user = User::where('id', Auth::id())->first();
+        $user->name = $request->name;
+        $user->mealcom_id = $request->mealcom_id;
+        $user->email = $request->email;
+        $user->profile = $request->profile;
+        // $post->updated_at = now();
+        $user->save();
+
+        return redirect()->action(
+          'UserController@showProfile', [
+              'id' => Auth::id(),
+      ]);
     }
     
     // フォローしているユーザーを表示
