@@ -16,7 +16,7 @@
             <form action="{{ route('unfollow', ['id' => $following_user->id]) }}" method="POST">
               @csrf
               {{ method_field('DELETE') }}
-              <button type="submit" class="btn btn-info">フォロー中</button>
+              <button type="submit" class="btn btn-info rounded-pill">フォロー中</button>
             </form>
         </div>
       </div>

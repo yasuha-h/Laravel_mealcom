@@ -12,19 +12,19 @@
         </div>
         @if (!auth()->user()->isFollowing($followed_user->id))
           <div class="offset-3 col-3 d-flex align-items-center 
-                      justify-content-center rounded-pill">
+                      justify-content-center">
             <form action="{{ route('follow', ['id' => $followed_user->id]) }}" method="POST">
               @csrf
-              <button type="submit" class="btn border">フォロー</button>
+              <button type="submit" class="btn border rounded-pill">フォロー</button>
             </form>
           </div>
         @else
           <div class="offset-3 col-3 d-flex align-items-center 
-                     justify-content-center rounded-pill">
+                     justify-content-center">
             <form action="{{ route('unfollow', ['id' => $followed_user->id]) }}" method="POST">
               @csrf
               {{ method_field('DELETE') }}
-              <button type="submit" class="btn btn-info">フォロー中</button>
+              <button type="submit" class="btn btn-info rounded-pill">フォロー中</button>
             </form>
           </div>
         @endif
