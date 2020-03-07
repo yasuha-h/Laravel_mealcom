@@ -18,7 +18,7 @@
               </form>
             </li>
             <li class="align-self-center col-3">
-              <a href="/share" class="d-block text-center p-1">シェア</a>
+              <a href="/share" class="d-block text-center p-1 rounded-pill btn-info">シェア</a>
             </li>
           </ul>
         @endauth
