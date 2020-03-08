@@ -19,8 +19,12 @@ Route::get('/login', 'Auth\LoginController@showLoginForm');
 
 Route::get('/user/{id}', 'UserController@showProfile');
 Route::get('/user/{id}/following', 'UserController@showFollowing');
-Route::get('/user/{id}/followers', 'UserController@showFollowers');
+
 Route::get('/user/{id}/nices', 'UserController@showNices');
+Route::post('/{post_id}/nice', 'NiceController@nice')->name('nice');
+Route::delete('/{post_id}/unnice', 'NiceController@unNice')->name('un-nice');
+
+Route::get('/user/{id}/followers', 'UserController@showFollowers');
 Route::post('user/{id}/follow', 'UserController@follow')->name('follow');
 Route::delete('user/{id}/unfollow', 'UserController@unfollow')->name('unfollow');
 

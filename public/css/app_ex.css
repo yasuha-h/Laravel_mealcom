@@ -20,8 +20,11 @@ header {
   position: sticky;
   top: 5rem;
 }
-.fa-heart {
+.heart-pink {
   color: #ff1493;
+}
+.heart-white {
+  color: grey;
 }
 .fs-user-name {
   font-size: 1.5rem;

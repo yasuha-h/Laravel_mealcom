@@ -19,7 +19,18 @@
       </div>
     @endif
     <div class="col-1 p-0 d-flex align-self-center">
-      <i class="fas fa-heart d-block"></i>
+      @if($nice->isNice(auth()->id(), $post->id))
+        <form action="{{ route('un-nice', ['post_id' => $post->id]) }}" method="POST">
+          @csrf
+          {{ method_field('DELETE') }}
+          <button type="submit" class="p-1 border-0"><i class="fas fa-heart heart-pink"></i></button>
+        </form>
+      @else
+        <form action="{{ route('nice', ['post_id' => $post->id]) }}" method="POST">
+          @csrf
+          <button type="submit" class="p-1 border-0"><i class="far fa-heart"></i></button>
+        </form>
+      @endif
     </div>
   </div>
 @endforeach
