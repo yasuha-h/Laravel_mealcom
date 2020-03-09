@@ -39,7 +39,8 @@ class UserController extends Controller
         $user->mealcom_id = $request->mealcom_id;
         $user->email = $request->email;
         $user->profile = $request->profile;
-        // $post->updated_at = now();
+        $file_ex = $request->file('thumbnail')->getClientOriginalExtension();
+        $user->thumbnail = $request->file('thumbnail')->storeAs('/public/thumbnail/', $user->id.'.'.$file_ex);
         $user->save();
 
         return redirect()->action(
