@@ -18,9 +18,10 @@ class UserController extends Controller
     }
 
     // ユーザープロフィール表示
-    public function showProfile(int $id)
+    public function showProfile(Nice $nice, int $id)
     {
         return view('user.share', [
+            'nice' => $nice,
             'user' => User::findOrFail($id),
             'posts' => Post::where('user_id', $id)->get(),
         ]);
