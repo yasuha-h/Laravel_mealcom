@@ -7,7 +7,7 @@
       <div class="row h-100">
         <!-- ユーザープロフィール  -->
         <div class="col-4 row px-0 h-100 m-0 sticky pt-5 text-center">
-          <img class="offset-4 col-4 border thumbnail rounded-circle p-0" src="{{ asset('/storage/'.$user->thumbnail) }}">
+          <img class="offset-4 col-4 border rounded-circle p-0" src="{{ asset('/storage/'.$user->thumbnail) }}">
           <h3 class="sticky col-12 text-center m-0 pt-2">{{ $user->name }}</h3>
           <div class="col-12 text-center pt-3">ID:{{ $user->mealcom_id }}</div>
           <div class="col-12 text-center pt-3">性別:{{ $user->sex_code }}</div>
