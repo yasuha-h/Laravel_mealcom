@@ -18,7 +18,7 @@ class NiceController extends Controller
         // $post_count = Post::where('post_id', $post_id)->select('nice_count')->first();
     }
 
-    public function nice(Nice $nice, int $post_id)
+    public function nice(Nice $nice, Post $post, int $post_id)
     {
         $user = Auth::user();
         $is_nice = $nice->isNice($user->id, $post_id);
@@ -26,10 +26,11 @@ class NiceController extends Controller
         {
             // NiceしていなければNiceする
             $nice->nice($user->id, $post_id);
+            $post->niceCount($post_id);
             return back();
         }
     }
-    public function unNice(Nice $nice, int $post_id)
+    public function unNice(Nice $nice, Post $post, int $post_id)
     {
         $user = Auth::user();
         $is_nice = $nice->isNice($user->id, $post_id);
@@ -37,6 +38,7 @@ class NiceController extends Controller
         {
             // NiceしていればNiceを解除する
             $nice->unNice($user->id, $post_id);
+            $post->niceDiscount($post_id);
             return back();
         }
     }

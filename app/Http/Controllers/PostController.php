@@ -56,6 +56,7 @@ class PostController extends Controller
         $post->content = $request->post_content;
         $file_ex = $request->file('post_img')->getClientOriginalExtension();
         $post->img_1 = $request->file('post_img')->storeAs('/public/post/', $post_count.'.'.$file_ex);
+        $post->nice_count = 0;
         $post->created_at = now();
         $post->updated_at = now();
         $post->save();
