@@ -17,7 +17,7 @@ class HomeController extends Controller
                         ->select('followed_id')
                         ->get()
                         ->push($user->id)
-                 )->select('id', 'img_1', 'content')->get();
+                 )->select('id', 'user_id', 'img_1', 'content')->get();
         return view('index', [
           'nice' => $nice,
           'user' => $user,
