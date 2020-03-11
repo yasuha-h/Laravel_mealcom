@@ -18,7 +18,7 @@
                  placeholder="メールアドレス" value="{{ $auth->email }}">
         </li>
         <li class="pt-3 px-0 offset-3 col-6">
-          <label class="text-dark">サムネイル:</label>
+          <label class="text-dark ml-5 pl-4">サムネイル:</label>
           <input type="file" name="thumbnail" class="w-50 d-inline">
         </li>
         <li class="pt-3 px-0 offset-3 col-6 text-center">
