@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 use illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
@@ -55,7 +56,8 @@ class PostController extends Controller
         $post->user_id = Auth::id();
         $post->content = $request->post_content;
         $file_ex = $request->file('post_img')->getClientOriginalExtension();
-        $post->img_1 = $request->file('post_img')->storeAs('/public/post/', $post_count.'.'.$file_ex);
+        $post->img_1 = Storage::disk('s3')->putFileAs('/post', $request->file('post_img'), $post_count.'.'.$file_ex);
+        // $post->img_1 = $request->file('post_img')->storeAs('/public/post/', $post_count.'.'.$file_ex);
         $post->nice_count = 0;
         $post->created_at = now();
         $post->updated_at = now();
