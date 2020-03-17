@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 use App\Nice;
 use App\Post;
@@ -40,7 +41,8 @@ class UserController extends Controller
         $user->email = $request->email;
         $user->profile = $request->profile;
         $file_ex = $request->file('thumbnail')->getClientOriginalExtension();
-        $user->thumbnail = $request->file('thumbnail')->storeAs('/public/thumbnail/', $user->id.'.'.$file_ex);
+        $path = Storage::disk('s3')->putFileAs('/thumbnail', $request->file('thumbnail'), $user->id.'.'.$file_ex);
+        $user->thumbnail = Storage::disk('s3')->url($path);
         $user->save();
 
         return redirect()->action(
