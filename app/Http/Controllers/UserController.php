@@ -41,7 +41,7 @@ class UserController extends Controller
         $user->email = $request->email;
         $user->profile = $request->profile;
         $file_ex = $request->file('thumbnail')->getClientOriginalExtension();
-        $path = Storage::disk('s3')->putFileAs('/thumbnail', $request->file('thumbnail'), $user->id.'.'.$file_ex);
+        $path = Storage::disk('s3')->putFileAs('/thumbnail', $request->file('thumbnail'), $user->id.'.'.$file_ex, 'public');
         $user->thumbnail = Storage::disk('s3')->url($path);
         $user->save();
 
