@@ -58,7 +58,7 @@ class UserController extends Controller
                               Follower::where('following_id', $id)
                                 ->select('followed_id')
                                 ->get()    
-                          )->get();
+                          )->orderBy('id', 'desc')->get();
         return view('user.following', [
             'user' => User::findOrFail($id),
             'following_users' => $following_users,
@@ -72,7 +72,7 @@ class UserController extends Controller
                             Follower::where('followed_id', $id)
                               ->select('following_id')
                               ->get()
-                          )->get();
+                          )->orderBy('id', 'desc')->get();
         return view('user.followers', [
             'user' => User::findOrFail($id),
             'followed_users' => $followed_users,
