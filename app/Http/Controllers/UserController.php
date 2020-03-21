@@ -24,7 +24,7 @@ class UserController extends Controller
         return view('user.share', [
             'nice' => $nice,
             'user' => User::findOrFail($id),
-            'posts' => Post::where('user_id', $id)->get(),
+            'posts' => Post::where('user_id', $id)->orderBy('id', 'desc')->get(),
         ]);
     }
     public function showEdit()
@@ -57,9 +57,8 @@ class UserController extends Controller
         $following_users = User::whereIn('id',
                               Follower::where('following_id', $id)
                                 ->select('followed_id')
-                                ->get()        
+                                ->get()    
                           )->get();
-
         return view('user.following', [
             'user' => User::findOrFail($id),
             'following_users' => $following_users,
@@ -84,10 +83,10 @@ class UserController extends Controller
     public function showNices(Nice $nice, int $id)
     {
         $post_nices = Post::whereIn('id',
-                    Nice::where('user_id', $id)
-                      ->select('post_id')
-                      ->get()   
-                 )->get();
+                        Nice::where('user_id', $id)
+                          ->select('post_id')
+                          ->get()   
+                      )->orderBy('id', 'desc')->get();
         return view('user.nices', [
           'nice' => $nice,
           'user' => User::findOrFail($id),
