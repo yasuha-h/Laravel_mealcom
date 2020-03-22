@@ -40,11 +40,12 @@ class UserController extends Controller
         $user->mealcom_id = $request->mealcom_id;
         $user->email = $request->email;
         $user->profile = $request->profile;
-        $file_ex = $request->file('thumbnail')->getClientOriginalExtension();
-        $path = Storage::disk('s3')->putFileAs('/thumbnail', $request->file('thumbnail'), $user->id.'.'.$file_ex, 'public');
-        $user->thumbnail = Storage::disk('s3')->url($path);
+        if( $request->thumbnail ){
+            $file_ex = $request->file('thumbnail')->getClientOriginalExtension();
+            $path = Storage::disk('s3')->putFileAs('/thumbnail', $request->file('thumbnail'), $user->id.'.'.$file_ex, 'public');
+            $user->thumbnail = Storage::disk('s3')->url($path);
+        }
         $user->save();
-
         return redirect()->action(
           'UserController@showProfile', [
               'id' => Auth::id(),

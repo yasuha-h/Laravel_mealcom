@@ -23,7 +23,7 @@
         </li>
         <li class="pt-3 px-0 offset-3 col-6 text-center">
           <textarea class="form-control w-75 m-auto" name="profile" type="text" 
-          id="post" rows="8" value="$auth->profile" placeholder="140文字"></textarea>  
+          id="post" rows="8" placeholder="140文字">{{ $auth->profile }}</textarea>  
         </li>
       </ul>
       <div class="row justify-content-center py-4">
