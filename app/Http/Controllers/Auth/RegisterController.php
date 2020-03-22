@@ -70,7 +70,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'mealcom_id' => $data['mealcom_id'],
-            'thumbnail' => 'public/thumbnail/non-image.jpg',
+            'thumbnail_path' => 'https://mealcom.s3-ap-northeast-1.amazonaws.com/post/non-image.jpg',
         ]);
     }
 }
