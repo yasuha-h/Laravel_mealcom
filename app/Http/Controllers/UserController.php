@@ -42,6 +42,11 @@ class UserController extends Controller
         $user->profile = $request->profile;
         if($request->thumbnail)
         {
+            if($user->thumbnail_name)
+            {
+                // 初期サムネイル以外があれば削除
+                Storage::disk('s3')->delete($user->thumbnail_name);
+            }
             $file_ex = $request->file('thumbnail')->getClientOriginalExtension();
             $user->thumbnail_name = Storage::disk('s3')
                                       ->putFileAs('/thumbnail', $request->file('thumbnail'), $user->id.'.'.$file_ex, 'public');
