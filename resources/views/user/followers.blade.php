@@ -4,7 +4,7 @@
     <div class="container py-3 border-bottom">
       <div class="row">
         <div class="col-3 d-flex align-items-center justify-content-center">
-          <img class="offset-4 col-5 border rounded-circle p-0" src="{{ $followed_user->thumbnail }}">
+          <img class="offset-4 col-5 border rounded-circle p-0" src="{{ $followed_user->thumbnail_path }}">
         </div>
         <div class="col-3 row">
           <p class="col-12 m-0 fs-user-name">{{ $followed_user->name }}</p>
