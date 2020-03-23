@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -37,6 +38,30 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+    
+    // AuthenticatesUsersのオーバーライド:ログインをe-mal or mealcom_id
+    public function username()
+    {
+        return 'mealcom_id';
+    }
+
+    // protected function attemptLogin(Request $request)
+    // {
+    //     $username = $request->input($this->username());
+    //     $password = $request->input('password');
+    //     // メールアドレスかどうか判定
+    //     if(filter_var($username, FILTER_VALIDATE_EMAIL))
+    //     {
+    //         $credentials = ['email' => $username, 'password' => $password];
+    //     }
+    //     else
+    //     {
+    //         $credentials = [$this->username() => $username, 'password' => $password];
+    //     }
+    //     return $this->guard()->attempt(
+    //         $this->credentials($request), $request->filled('remember')
+    //     );
+    // }
 
 
 }

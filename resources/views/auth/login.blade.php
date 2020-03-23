@@ -7,7 +7,7 @@
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
     <div class="row">
       <div class="col-10 offset-1 col-md-6 offset-sm-3 pt-5 text-center">
-      <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="メールアドレス">
+      <input id="mealcom_id" type="text" class="form-control" name="mealcom_id" value="{{ old('mealcom_id') }}" placeholder="email / mealcom ID">
       </div>
     </div>
     <div class="row">
