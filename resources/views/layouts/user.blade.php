@@ -10,7 +10,6 @@
           <img class="offset-4 col-4 border rounded-circle p-0" src="{{ $user->thumbnail_path }}" width="125px" height="125px">
           <h3 class="sticky col-12 text-center m-0 pt-2">{{ $user->name }}</h3>
           <div class="col-12 text-center pt-3">ID:{{ $user->mealcom_id }}</div>
-          <div class="col-12 text-center pt-3">性別:{{ $user->sex_code }}</div>
           <div class="col-12 text-center mb-1 pt-3">{{ $user->profile }}</div>
           @if(auth()->id() === $user->id)
             <div class="offset-3 col-6 pt-3 text-center">
