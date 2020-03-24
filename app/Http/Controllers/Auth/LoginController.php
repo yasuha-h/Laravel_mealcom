@@ -45,23 +45,23 @@ class LoginController extends Controller
         return 'mealcom_id';
     }
 
-    // protected function attemptLogin(Request $request)
-    // {
-    //     $username = $request->input($this->username());
-    //     $password = $request->input('password');
-    //     // メールアドレスかどうか判定
-    //     if(filter_var($username, FILTER_VALIDATE_EMAIL))
-    //     {
-    //         $credentials = ['email' => $username, 'password' => $password];
-    //     }
-    //     else
-    //     {
-    //         $credentials = [$this->username() => $username, 'password' => $password];
-    //     }
-    //     return $this->guard()->attempt(
-    //         $this->credentials($request), $request->filled('remember')
-    //     );
-    // }
+    protected function attemptLogin(Request $request)
+    {
+        $username = $request->input($this->username());
+        $password = $request->input('password');
+        // メールアドレスかどうか判定
+        if(false !== filter_var($username, FILTER_VALIDATE_EMAIL))
+        {
+            $credentials = ['email' => $username, 'password' => $password];
+        }
+        else
+        {
+            $credentials = [$this->username() => $username, 'password' => $password];
+        }
+        return $this->guard()->attempt(
+            $credentials, $request->filled('remember')
+        );
+    }
 
 
 }
