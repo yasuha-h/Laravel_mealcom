@@ -58,7 +58,7 @@ return [
         'string'  => ':attribute は :value 文字以上である必要があります。',
         'array'   => ':attribute には value 個以上の項目が必要です。',
     ],
-    'image'                => ':attribute 画像は「jpg」「png」「bmp」「gif」「svg」のみ有効です',
+    'image'                => ':attribute 画像は「jpg」「png」「jpeg」のみ有効です',
     'in'                   => ':attribute 無効な値です',
     'in_array'             => ':attribute は :other と一致する必要があります',
     'integer'              => ':attribute は整数のみ有効です',
@@ -97,7 +97,7 @@ return [
     'numeric'              => ':attribute は数字のみ有効です',
     'present'              => ':attribute が存在しません',
     'regex'                => ':attribute 無効な値です',
-    'required'             => ':attribute は必須です',
+    'required'             => ':attribute を入力してください',
     'required_if'          => ':attribute は :other が :value には必須です',
     'required_unless'      => ':attribute は :other が :values でなければ必須です',
     'required_with'        => ':attribute は :values が入力されている場合は必須です',
@@ -154,6 +154,12 @@ return [
       |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'post_img' => '画像',
+        'password' => 'パスワード',
+        'name' => 'ユーザー名',
+        'email' => 'メールアドレス',
+        'mealcom_id' => 'mealcom ID',
+    ],
 
 ];
