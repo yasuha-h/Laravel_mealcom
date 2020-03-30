@@ -2,7 +2,7 @@
   <div class="container-60 border-grey row pt-3 pb-0 px-0 rounded-lg">
     <div class="offset-1 col-10 text-center">
       <!-- img -->
-      <img src="{{ $post->img_1 }}">
+      <img src="{{ $post->img_1 }}" width="300px">
     </div>
     <div class="offset-1 col-10">
       <!-- text-content -->
