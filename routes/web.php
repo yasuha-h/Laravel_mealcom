@@ -28,8 +28,8 @@ Route::get('/user/{id}/followers', 'UserController@showFollowers');
 Route::post('user/{id}/follow', 'UserController@follow')->name('follow');
 Route::delete('user/{id}/unfollow', 'UserController@unfollow')->name('unfollow');
 
-Route::get('/edit', 'UserController@showEdit')->middleware('auth');;
-Route::get('/share', 'PostController@createPost')->middleware('auth');;
+Route::get('/edit', 'UserController@showEdit')->middleware('auth');
+Route::get('/share', 'PostController@createPost')->middleware('auth');
 
 Route::post('/logout', 'Auth\LoginController@logout');
 Route::post('/login', 'Auth\LoginController@login')->name('login');
