@@ -14,21 +14,14 @@ class PostController extends Controller
 {
     public function __construct()
     {
-      $this->middleware('auth')
+        $this->middleware('auth')
            ->except(['createPost']);
     }
     // シェア投稿ページ表示
     public function createPost() 
     {
-        if( Auth::check() )
-        {
-            $user = Auth::user();
-            return view('post', ['user' => $user]);
-        }
-        else
-        {
-            return redirect('/login');
-        }
+        $user = Auth::user();
+        return view('post', ['user' => $user]);
     }
 
     /**
