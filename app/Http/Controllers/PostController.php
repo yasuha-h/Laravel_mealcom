@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 use illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Http\Requests\PostRequest;
 use App\Post;
 
 
@@ -36,19 +37,8 @@ class PostController extends Controller
      * @param Request $request
      * @return Response
      */
-    public function post(Request $request) 
+    public function post(PostRequest $request) 
     {
-        // Postバリデーション
-        $request->validate([
-            'post_img' => [
-                'required', 
-                'file',
-                'image',
-                'mimes:jpeg,png,jpg',
-                'max:2048',
-            ],
-            'content' => ['max:140'],
-        ]);
         // レコード数のカウント+1
         $post_count = (string) Post::count() + 1;
         // Postレコード作成
